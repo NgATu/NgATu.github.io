@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Contract Wallet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Personal Smart Contract Wallet</h1>
+            <p>Manage your smart contracts securely and efficiently</p>
+            <button id="connectWallet" class="btn primary">Connect Wallet</button>
+        </header>
+
+        <div id="walletInfo" class="hidden">
+            <p>Connected Address: <span id="walletAddress"></span></p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="contracts">My Contracts</button>
+            <button class="tab-btn" data-tab="create">Create Contract</button>
+        </div>
+
+        <div id="contracts" class="tab-content active">
+            <div class="contract-list" id="contractList">
+                <!-- Contracts will be inserted here -->
+            </div>
+        </div>
+
+        <div id="create" class="tab-content">
+            <form id="createContractForm" class="contract-form">
+                <div class="form-group">
+                    <label for="counterParty">Counter Party Address</label>
+                    <input type="text" id="counterParty" required placeholder="0x...">
+                </div>
+
+                <div class="form-group">
+                    <label for="contractType">Contract Type</label>
+                    <select id="contractType" required>
+                        <option value="RENTAL">Real Estate Rental</option>
+                        <option value="INSURANCE">Insurance</option>
+                        <option value="EMPLOYMENT">Employment</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="terms">Terms</label>
+                    <textarea id="terms" required rows="4" placeholder="Enter contract terms..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="value">Value (ETH)</label>
+                    <input type="number" id="value" required step="0.001" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate" required>
+                </div>
+
+                <button type="submit" class="btn primary">Create Contract</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="notifications" class="notifications"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="contract-abi.js"></script>
+    <script src="wallet.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
