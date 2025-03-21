@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decentralized Voting System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-vote-yea"></i>
+            <span>DVoting</span>
+        </div>
+        <div class="acc">
+            <span class="accH">YOUR ACCOUNT</span> <br>
+            <span id="walletAddress" class="wallet-address"></span>
+        </div>
+        <div class="wallet-section">
+            <button id="connectWallet" class="connect-btn">
+                <i class="fas fa-wallet"></i>
+                <span>Connect Wallet</span>
+            </button>
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="dashboard">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-info">
+                        <h3>Total Candidates</h3>
+                        <p id="totalCandidates">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="stat-info">
+                        <h3>Total Votes</h3>
+                        <p id="totalVotes">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-info">
+                        <h3>Status</h3>
+                        <p id="votingStatus">Not Started</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="adminPanel" class="admin-panel hidden">
+                <h2><i class="fas fa-user-shield"></i> Admin Controls</h2>
+                <div class="admin-controls">
+                    <div class="input-group">
+                        <input type="text" id="candidateName" placeholder="Enter candidate name">
+                        <button id="addCandidate" class="admin-btn">
+                            <i class="fas fa-plus"></i> Add Candidate
+                        </button>
+                    </div>
+                    <div class="voting-controls">
+                        <button id="startVoting" class="admin-btn success">
+                            <i class="fas fa-play"></i> Start Voting
+                        </button>
+                        <button id="endVoting" class="admin-btn danger">
+                            <i class="fas fa-stop"></i> End Voting
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="voting-section">
+                <div class="table-container">
+                    <table id="candidatesTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Candidate Name</th>
+                                <th>Votes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="candidatesList">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="voting-section">
+
+
+                <div id="votedSection" class="voted-section" style="display: none;">
+                    <div class="voted-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h2>You have voted successfully!</h2>
+                        <p>Thank you for voting. Please see the results in the table below.</p>
+                    </div>
+                    <div class="acc" style="margin-top: 20px;">
+                        <h2>YOUR ACCOUNT</h2>
+                        <div id="walletAddress1" style="font-size: 20px;"></div>
+                    </div>
+                </div>
+
+                <div id="votingControls" class="section-header">
+                    <h2><i class="fas fa-ballot"></i> Cast Your Vote</h2>
+                    <div class="voting-selection">
+                        <select id="candidateSelect" class="candidate-dropdown">
+                            <option value="">-- Select a candidate to vote --</option>
+                        </select>
+                    </div>
+
+                    <div class="btnVote">
+                        <button id="voteButton" class="vote-button">
+                            <i class="fas fa-vote-yea"></i> Cast Vote
+                        </button>
+                    </div>
+
+                    <p style="color: red; margin-top: 15px;" class="btnVote">Please note that vote once. Recorded cannot
+                        be changed!</p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Import ethers.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"
+        type="application/javascript"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

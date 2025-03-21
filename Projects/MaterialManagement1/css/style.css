@@ -1,0 +1,97 @@
+.navbar {
+    margin-bottom: 20px;
+}
+
+#walletAddress {
+    color: #fff;
+    font-size: 0.9em;
+}
+
+.table th {
+    background-color: #f8f9fa;
+}
+
+.transaction-import {
+    color: green;
+}
+
+.transaction-export {
+    color: red;
+}
+
+.quantity-change {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity-arrow {
+    font-size: 1.2em;
+}
+
+.quantity-increase {
+    color: green;
+}
+
+.quantity-decrease {
+    color: red;
+}
+
+.quantity-cell {
+    position: relative;
+}
+
+.quantity-diff {
+    font-size: 0.8em;
+    position: absolute;
+    top: -8px;
+    right: 0;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.diff-positive {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.diff-negative {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.blockchain-hash {
+    font-family: monospace;
+    font-size: 0.8em;
+}
+
+.btn-action {
+    margin: 0 2px;
+}
+
+.pagination-info {
+    color: #6c757d;
+}
+
+.pagination {
+    margin-bottom: 0;
+}
+
+.page-link:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.input-group {
+    max-width: 300px;
+    margin-left: auto;
+}
+
+#searchMaterialId:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+.bi-search {
+    font-size: 0.9rem;
+}
